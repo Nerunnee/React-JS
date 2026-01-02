@@ -3,21 +3,27 @@ import style from "./page.module.css";
 export default function Home() {
   return (
     <div className={style.box}>
-      <Container />
+      <Container
+        img="/Profile Image.png"
+        name="Sophie Bennett"
+        desc="Product Designer who focuses on simplicity & usability."
+        num1={314}
+        num2={48}
+      />
     </div>
   );
 }
 
-const Container = () => {
+const Container = (props) => {
   return (
     <div className={style.profile__container}>
       <img
-        src="/Profile Image.png"
+        src={props.img}
         alt="Profile picture"
         className={style.profile__img}
       />
       <div className={style.profile__name}>
-        <h4>Sophie Bennett</h4>
+        <h4>{props.name}</h4>
         <img
           src="/Verification Icon Container.png"
           alt="Check icon"
@@ -25,9 +31,7 @@ const Container = () => {
         />
       </div>
 
-      <p className={style.profile__text}>
-        Product Designer who focuses on simplicity & usability.
-      </p>
+      <p className={style.profile__text}>{props.desc}</p>
 
       <div className={style.profile__footer}>
         <div className={style.footer__icon}>
@@ -36,7 +40,7 @@ const Container = () => {
             alt="User Icon"
             className={style.icon}
           />
-          <p>314</p>
+          <p>{props.num1}</p>
         </div>
 
         <div className={style.footer__icon}>
@@ -45,7 +49,7 @@ const Container = () => {
             alt="Picture Icon"
             className={style.icon}
           />
-          <p>48</p>
+          <p>{props.num2}</p>
         </div>
 
         <button className={style.button}>Follow +</button>
