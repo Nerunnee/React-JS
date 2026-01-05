@@ -8,7 +8,6 @@ export default function Home() {
       <Double number={3} />
       <DrinkList />
       <CarInfo car={car} />
-      <AddFruits fruit={fruit} />
     </div>
   );
 }
@@ -51,8 +50,8 @@ const CarInfo = ({ car }) => {
   );
 };
 
-const AddFruits = ({ fruit }) => {
-  // allFruits = [];
-  // {...fruit, allFruits.push("cherry")};
-  // return allFruits
-};
+const fruit = ["apple", "banana"];
+
+const AllFruits = [...fruit, "cherry"];
+
+console.log(AllFruits);
